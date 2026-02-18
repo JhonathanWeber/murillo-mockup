@@ -27,37 +27,37 @@ const projects = [
         id: 1,
         title: "Vote SIM!",
         subtitle: "Pela redução da carga tributária",
-        image: "/placeholder-project-1.jpg",
+        image: "https://picsum.photos/seed/project1/800/600",
         status: "Aprovado",
     },
     {
         id: 2,
         title: "Metas para 2026",
         subtitle: "Conheça o plano de expansão",
-        image: "/placeholder-project-2.jpg",
+        image: "https://picsum.photos/seed/project2/800/600",
         status: "Em andamento",
     },
     {
         id: 3,
         title: "Recursos para Saúde",
         subtitle: "R$ 5 milhões para o Hospital Regional",
-        image: "/placeholder-project-3.jpg",
+        image: "https://picsum.photos/seed/project3/800/600",
         status: "Concluído",
     },
     {
         id: 4,
         title: "Educação em Foco",
         subtitle: "Reforma de 10 escolas no interior",
-        image: "/placeholder-project-4.jpg",
+        image: "https://picsum.photos/seed/project4/800/600",
         status: "Em licitação",
     },
 ];
 
 const galleryImages = [
-    "/placeholder-gallery-1.jpg",
-    "/placeholder-gallery-2.jpg",
-    "/placeholder-gallery-3.jpg",
-    "/placeholder-gallery-4.jpg",
+    "https://picsum.photos/seed/gallery1/800/600",
+    "https://picsum.photos/seed/gallery2/800/600",
+    "https://picsum.photos/seed/gallery3/800/600",
+    "https://picsum.photos/seed/gallery4/800/600",
 ];
 
 const news = [
@@ -66,21 +66,21 @@ const news = [
         title: "Murillo Gouvea visita obras no Noroeste",
         date: "18 Fev 2026",
         summary: "O deputado esteve presente na fiscalização das novas estradas...",
-        image: "/placeholder-news-1.jpg"
+        image: "https://picsum.photos/seed/news1/800/600"
     },
     {
         id: 2,
         title: "Aprovada lei de incentivo ao esporte",
         date: "15 Fev 2026",
         summary: "Projeto visa ampliar o acesso a escolinhas de futebol...",
-        image: "/placeholder-news-2.jpg"
+        image: "https://picsum.photos/seed/news2/800/600"
     },
     {
         id: 3,
         title: "Encontro regional de lideranças",
         date: "10 Fev 2026",
         summary: "Reunião definiu estratégias para o próximo semestre...",
-        image: "/placeholder-news-3.jpg"
+        image: "https://picsum.photos/seed/news3/800/600"
     }
 ];
 
@@ -304,7 +304,7 @@ export default function LandingPage() {
 
                     <div className="container mx-auto max-w-7xl px-4 grid md:grid-cols-2 gap-8 relative z-10 pt-20">
                         <div ref={heroTextRef} className="flex flex-col justify-center space-y-6">
-                            <h1 className="text-5xl md:text-7xl font-bold leading-tight text-white drop-shadow-lg">
+                            <h1 className="text-3xl md:text-7xl font-bold leading-tight text-white drop-shadow-lg">
                                 <TypingEffect text="O Deputado" /> <br />
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300">
                                     <TypingEffect text="mais amado" delay={0.5} />
@@ -334,7 +334,7 @@ export default function LandingPage() {
                             <div className="flex items-center gap-4 mb-4">
                                 {/* Placeholder for Toucan Mascot */}
                                 <div className="w-16 h-16 bg-[#FFD700] rounded-full flex items-center justify-center font-bold text-[#0B1B47] animate-bounce shadow-lg">Tucano</div>
-                                <h2 className="text-4xl font-bold text-[#0B1B47]">
+                                <h2 className="text-2xl md:text-4xl font-bold text-[#0B1B47]">
                                     <TypingEffect text="Conheça as principais" /> <br />
                                     <TypingEffect text="ações e projetos" delay={0.5} />
                                 </h2>
@@ -348,11 +348,13 @@ export default function LandingPage() {
                                         <div className="p-1">
                                             <Card className="border-0 shadow-lg overflow-hidden group cursor-pointer hover:-translate-y-2 transition-transform duration-300 rounded-2xl h-full">
                                                 <div className="relative h-96 w-full bg-gray-200">
-                                                    {/* Image Placeholder */}
-                                                    <div className="absolute inset-0 flex items-center justify-center text-gray-400">
-                                                        [Imagem {project.id}]
-                                                    </div>
-                                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                                                    <Image
+                                                        src={project.image}
+                                                        alt={project.title}
+                                                        fill
+                                                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                                    />
+                                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
 
                                                     <div className="absolute bottom-0 left-0 p-6 text-white w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                                                         <Badge className="mb-3 bg-[#FFD700] text-[#0B1B47] hover:bg-[#FFD700] shadow-md">{project.status}</Badge>
@@ -392,7 +394,7 @@ export default function LandingPage() {
                             <div className="space-y-8">
                                 <div className="bio-text-animated">
                                     <h3 className="text-[#FFD700] font-bold tracking-widest uppercase mb-2">Trajetória</h3>
-                                    <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                                    <h2 className="text-3xl md:text-5xl font-bold leading-tight mb-6">
                                         <TypingEffect text="A história de" /> <br />
                                         <TypingEffect text="Murillo Gouvea" delay={0.5} />
                                     </h2>
@@ -426,7 +428,7 @@ export default function LandingPage() {
                         <div className="inline-flex items-center justify-center p-3 rounded-full bg-blue-100 text-[#0B1B47] mb-4 shadow-sm">
                             <Album size={24} />
                         </div>
-                        <h2 className="text-3xl font-bold text-[#0B1B47]">
+                        <h2 className="text-2xl md:text-3xl font-bold text-[#0B1B47]">
                             <TypingEffect text="Navegue pela galeria de" /> <span className="text-blue-600"><TypingEffect text="FOTOS!" delay={0.8} /></span>
                         </h2>
                     </div>
@@ -462,7 +464,7 @@ export default function LandingPage() {
                         <div className="flex justify-between items-end mb-12">
                             <div>
                                 <h3 className="text-blue-600 font-bold uppercase tracking-wider mb-2">Informação</h3>
-                                <h2 className="text-4xl font-bold text-[#0B1B47]">
+                                <h2 className="text-2xl md:text-4xl font-bold text-[#0B1B47]">
                                     <TypingEffect text="Últimas notícias!" />
                                 </h2>
                             </div>
@@ -473,11 +475,15 @@ export default function LandingPage() {
                             {news.map((item) => (
                                 <Card key={item.id} className="news-card border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white overflow-hidden group hover:-translate-y-2">
                                     <div className="h-48 bg-gray-200 relative overflow-hidden">
+                                        <Image
+                                            src={item.image}
+                                            alt={item.title}
+                                            fill
+                                            className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                        />
                                         <div className="absolute top-4 left-4 bg-white/90 backdrop-blur text-[#0B1B47] px-3 py-1 rounded text-sm font-bold flex items-center gap-2 z-10 shadow-sm">
                                             <CalendarDays size={14} /> {item.date}
                                         </div>
-                                        {/* Zoom effect on image placeholder */}
-                                        <div className="absolute inset-0 bg-gray-300 transition-transform duration-700 group-hover:scale-110"></div>
                                     </div>
                                     <CardContent className="p-6">
                                         <h3 className="text-xl font-bold text-[#0B1B47] mb-3 group-hover:text-blue-600 transition-colors">{item.title}</h3>
