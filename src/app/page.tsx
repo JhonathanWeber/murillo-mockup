@@ -439,10 +439,12 @@ export default function LandingPage() {
                                 {galleryImages.map((img, i) => (
                                     <CarouselItem key={i} className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4 gallery-item">
                                         <div className="aspect-video bg-gray-300 rounded-xl overflow-hidden relative shadow-md group cursor-pointer hover:shadow-2xl transition-all duration-500">
-                                            <div className="absolute inset-0 flex items-center justify-center text-gray-500 font-medium z-0">Foto {i + 1}</div>
-                                            {/* Image would go here, simulated by bg-gray-300 for now, but adding hover zoom */}
-                                            <div className="absolute inset-0 bg-gray-300 transition-transform duration-700 group-hover:scale-110 z-0 opacity-50"></div>
-
+                                            <Image
+                                                src={img}
+                                                alt={`Galeria ${i + 1}`}
+                                                fill
+                                                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                            />
                                             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px] z-10">
                                                 <Button variant="outline" className="text-white border-white hover:bg-white hover:text-black transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Ampliar</Button>
                                             </div>
